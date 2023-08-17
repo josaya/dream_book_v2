@@ -1,29 +1,54 @@
+from flask import Flask, render_template, jsonify
 
-# Variables
-patient_name = "John Smith"
-age = 20
-new_patient = True
+app = Flask(__name__)
+
+print(app)
+
+projects = [
+    {
+        'id':1,
+        'Name': 'Stay Here',
+        'Description': 'Property finder app',
+        'Progress' : '60%'
+    },
+    {
+        'id':2,
+        'Name': 'Property Plus',
+        'Description': 'Property management app',
+        'Progress' : '95%'
+    },
+    {
+        'id':3,
+        'Name': 'Bucket List',
+        'Description': 'Fun activity planner and manager',
+        'Progress' : '20%'
+    },
+    {
+        'id':4,
+        'Name': 'Events Pro',
+        'Description': 'Events planner and manager',
+        'Progress' : '15%'
+    },
+    {
+        'id':5,
+        'Name': 'Learning Python',
+        'Description': 'Learning web development using Python'
+    }
+
+]
+
+@app.route('/')
+def welcome():
+    return render_template('home.html', 
+                           my_projects = projects,
+                           owner_name = "Josaya 01")
 
 
-# input function
-name = input("What is your name ")
-print("Patient's name is " + name)
+# adding current projects in the route
+@app.route('/api/projects')
+def current_projects():
+    return jsonify(projects)
 
-
-birth_year = input("Whats's your birth year? ")
-
-age = 2023 - float(birth_year)
-
-print("Your are " + str(age) + " years old")
-
-
-
-
-
-
-
-# print("The patient name is " % patient_name % ", he is " % age % "years old. Is he a new patient "% new_patient)
-
-
-
+if __name__ == '__main__':
+    app.run('0.0.0.0', debug = True)
 
