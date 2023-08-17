@@ -1,0 +1,33 @@
+<div class="border-bottom mb-4" style="padding-bottom: 8px;">
+
+    <div class="row">
+
+        <div class="col-9">
+
+            <h4 style="color: rgb(120, 120, 120); ">{{project['Name']}}</h4>
+    
+        <!-- <button class="btn btn-primary btn-lg text-end">View More</button> -->
+    
+        <div>
+            <b>Description:</b> {{project['Description']}}
+        </div>
+    
+        {% if 'Progress' in project %}
+    
+            <div>
+                <b>Status: </b> {{project['Progress']}}
+            </div>
+    
+        {% endif %}
+    
+        </div>
+    
+        <div class="col-3 text-end">
+    
+            <button type="button" class="btn btn-outline-primary">View More</button>
+    
+        </div>
+
+    </div>
+
+</div>

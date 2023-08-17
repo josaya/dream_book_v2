@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Dream Book</title>
+
+        <!-- <style>
+
+            h1 {
+
+                font-size: 40px;
+                font-family: 'Times New Roman', Times, serif;
+                font-weight: bold;
+                color: rgb(100, 100, 150);
+                text-align: center;
+
+
+            }
+
+            #banner {
+                width: 100%;
+                height: 300px;
+                object-fit: cover;
+            }
+
+            h2{
+                font-size: 30px;
+                font-family: 'Times New Roman', Times, serif;
+                font-weight: normal;
+                text-align: center;
+            }
+
+            p {
+                font-family: 'Times New Roman', Times, serif;
+                color: rgb(80, 80, 80);
+            }
+
+            #container {
+
+                max-width: 720px;
+                margin: 0 auto 0 auto;
+
+            }
+
+        </style> -->
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+        <style>
+            #banner {
+                width: 100%;
+                height: 320px;
+                object-fit: cover;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <div class="container">
+
+            <h1 class="text-center mt-4 mb-4" >{{owner_name}} Dream Book</h1>
+
+        <img class="img-fluid" id="banner" src="http://192.168.1.100:5000/static/banner.jpg" alt="">
+
+        <h2 class="text-center mt-4">My Life Dream</h2>
+
+        <p class="lead mt-4 mb-4">As a programmer, my ultimate personal life dream is to leverage my technical skills to create innovative 
+            and impactful technology solutions that empower individuals and communities around the world. 
+            This dream is fueled by the belief that technology can be a force for positive change and can bridge gaps, 
+            solve problems, and enhance lives in meaningful ways.</p>
+
+        <h2 class="text-center">My Dream Projects</h2>
+
+        <div>
+
+            <!-- {{my_projects}} -->
+
+            {% for project in my_projects %}
+
+                {% include 'projects_template.html' %}
+
+            {% endfor %}
+
+        </div>
+            
+        
+
+        <div class = "text-center">
+
+            <button class="btn btn-primary btn-lg mb-4">Contact Us</button>
+
+        </div>
+
+        <p class="text-center mb-4">Copyright @Josaya01 2023</p>
+
+        
+        </div>
+
+    </body>
+</html>
