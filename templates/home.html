@@ -53,6 +53,7 @@
                 width: 100%;
                 height: 320px;
                 object-fit: cover;
+                margin-bottom: 8px;
             }
         </style>
 
@@ -60,15 +61,16 @@
 
     <body>
 
-        {% include 'nav.html' %}
+        <!-- {% include 'nav.html' %} -->
 
+        {% include 'custom_nav_bar.html' %}
 
+        <h1 class="text-center mt-4 mb-4 mt-4" >{{owner_name}} Dream Book</h1>
+
+        <img class="img-fluid" id="banner" src="https://zero-one-dream-book-main.onrender.com/static/banner.jpg" alt="">
 
         <div class="container">
 
-            <h1 class="text-center mt-4 mb-4" >{{owner_name}} Dream Book</h1>
-
-        <img class="img-fluid" id="banner" src="https://zero-one-dream-book-main.onrender.com/static/banner.jpg" alt="">
 
         <h2 class="text-center mt-4">My Life Dream</h2>
 
@@ -99,10 +101,12 @@
 
         </div>
 
-        <p class="text-center mb-4">Copyright @Josaya01 2023</p>
+        <!-- <p class="text-center mb-4">Copyright @Josaya01 2023</p> -->
 
         
         </div>
+
+        {% include 'footer.html' %}
 
     </body>
 </html>
