@@ -15,13 +15,13 @@ projects = [
         'id':2,
         'Name': 'Property Plus',
         'Description': 'Property management app',
-        'Progress' : '95%'
+        'Progress' : '99%'
     },
     {
         'id':3,
         'Name': 'Bucket List',
         'Description': 'Fun activity planner and manager',
-        'Progress' : '20%'
+        'Progress' : '25%'
     },
     {
         'id':4,
