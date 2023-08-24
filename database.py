@@ -14,7 +14,7 @@ for root, dirs, files in os.walk(root_dir):
             certificate_path = os.path.join(root, file)
 
 
-db_connection_string = "mysql+pymysql://7c51tzqfmogugpog3b84:pscale_pw_3vFTg3C9QUglTw7Yj4DvePYSFv1jZuYGS5qICaRNOKi@aws.connect.psdb.cloud/dream_book?charset=utf8mb4"
+db_connection_string = "mysql+pymysql://mtcgw9l4sa2w2idxl2zs:pscale_pw_ynx3uIUWCPJGfHD4gn5haZTrH6bKA1S9YiXRYWTAx4S@aws.connect.psdb.cloud/dream_book?charset=utf8mb4"
 
 engine = create_engine(db_connection_string,
                        connect_args={
