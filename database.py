@@ -22,8 +22,8 @@ db_connection_string = "mysql+pymysql://fjrpiv6i6trp6e8xlqzg:pscale_pw_1s0FX1xTW
 engine = create_engine(db_connection_string,
                        connect_args={
                             "ssl": {
-                                # "ca": certificate_path
-                                "ca": "/etc/secrets/cert.pem"
+                                "ca": certificate_path
+                                # "ca": "/etc/secrets/cert.pem"
                                 
                             }
                         })
