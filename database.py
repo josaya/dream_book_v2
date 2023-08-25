@@ -16,7 +16,7 @@ for root, dirs, files in os.walk(root_dir):
 
 
 
-db_connection_string = "mysql+pymysql://i5phka3xjg1vgctbiflg:pscale_pw_m11owQ518QL8JAzwI7LMAcuCsDOb4ufUqlpOYPr4hT4@aws.connect.psdb.cloud/dream_book?charset=utf8mb4"
+db_connection_string = "mysql+pymysql://fjrpiv6i6trp6e8xlqzg:pscale_pw_1s0FX1xTW2rZzdqkx3lEGFzC4bcgDsvE1jrZ3LC3CgC@aws.connect.psdb.cloud/dream_book?charset=utf8mb4"
 
 
 engine = create_engine(db_connection_string,
