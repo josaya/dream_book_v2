@@ -14,7 +14,10 @@ for root, dirs, files in os.walk(root_dir):
             certificate_path = os.path.join(root, file)
 
 
-db_connection_string = "mysql+pymysql://9obuxu48zm2gcooyrqqp:pscale_pw_xNzX8sE0jrf20x2jgGlpB7RDSgODgNIXpm4gz4nxX0l@aws.connect.psdb.cloud/dream_book?charset=utf8mb4"
+# os.environ['DB_CONNECTION_STRING'] = 'mysql+pymysql://lzgwvmlag20se3ysdz9e:pscale_pw_HgYodV3rimx33cNgf8AjYHUZCHslGPskCcnWdPEFE11@aws.connect.psdb.cloud/dream_book?charset=utf8mb4'
+
+# db_connection_string = "mysql+pymysql://lzgwvmlag20se3ysdz9e:pscale_pw_HgYodV3rimx33cNgf8AjYHUZCHslGPskCcnWdPEFE11@aws.connect.psdb.cloud/dream_book?charset=utf8mb4"
+db_connection_string = os.environ['DB_CONNECTION_STRING']
 
 engine = create_engine(db_connection_string,
                        connect_args={
@@ -23,17 +26,26 @@ engine = create_engine(db_connection_string,
                             }
                         })
 
-# with engine.connect() as conn:
-#     result = conn.execute(text("select * from dream_book"))
+def getProjectsFromDB():
+    with engine.connect() as conn:
+        result = conn.execute(text("select * from dream_book"))
 
-#     projectList = []
+        projectList = []
 
-#     for row in result.all():
-#         p_list = dict(row._mapping)
-#         projectList.append(p_list)
+        # looping through all the rows in the dream_book table
+        for row in result.all():
 
+            # converting results into a dictionary
+            # _mapping maps every row data with the column name
+            p_list = dict(row._mapping)
 
-# print("projects list", projectList)
+            # appending/adding every row result into a list
+            projectList.append(p_list)
+
+        print("my_projects_list",projectList)
+
+        # returning the list
+        return projectList
     
 
 
